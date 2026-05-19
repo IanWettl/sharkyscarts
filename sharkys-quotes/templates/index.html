@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sharky's Quote Tool</title>
+</head>
+<body>
+
+  <h1>Sharky's Internal Quote Tool</h1>
+
+  <form action="/quote" method="POST">
+
+    <label>Customer Name:</label><br>
+    <input type="text" name="customer_name"><br><br>
+
+    <label>Cart Type:</label><br>
+    <select name="cart_type">
+      <option value="2">2-Passenger</option>
+      <option value="4">4-Passenger</option>
+      <option value="6">6-Passenger</option>
+    </select><br><br>
+
+    <label>Add-ons:</label><br>
+    <input type="checkbox" name="lift_kit"> Lift Kit<br>
+    <input type="checkbox" name="wheels"> Wheels<br>
+    <input type="checkbox" name="leds"> LED Lights<br><br>
+
+    <button type="submit">Generate Quote</button>
+
+  </form>
+
+</body>
+</html>
