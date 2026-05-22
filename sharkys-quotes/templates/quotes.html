@@ -1,0 +1,16 @@
+<h1>Quote History</h1>
+
+<a href="/">← Back</a>
+
+<hr>
+
+{% for q in quotes %}
+
+<div style="margin-bottom:20px; padding:10px; border:1px solid #ddd;">
+  <h3>{{ q.customer_name }}</h3>
+  <p>Cart: {{ q.cart_type }}</p>
+  <p>Total: ${{ q.quote.total }}</p>
+  <p>{{ q.timestamp }}</p>
+</div>
+
+{% endfor %}

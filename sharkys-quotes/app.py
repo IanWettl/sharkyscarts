@@ -5,6 +5,9 @@ from quote_engine import calculate_quote
 from weasyprint import HTML
 import pandas as pd
 import os
+import json
+from datetime import datetime
+
 
 
 
@@ -13,6 +16,18 @@ app = Flask(__name__)
 
 #Global variable to store current quote in memory.
 CURRENT_QUOTE = {}
+
+#helper functions for loading and saving quotes
+def load_quotes():
+    if not os.path.exists("quotes.json"):
+        return []
+    with open("quotes.json", "r") as f:
+        return json.load(f)
+
+
+def save_quotes(quotes):
+    with open("quotes.json", "w") as f:
+        json.dump(quotes, f, indent=2)
 
 
 # ---- ROUTES ----
@@ -37,11 +52,20 @@ def quote():
     quote = calculate_quote(cart_type, selected_parts)
 
     #STORE THE QUOTE
-    global CURRENT_QUOTE
-    CURRENT_QUOTE = {
+    quote_data = {
+        "id": len(load_quotes()) + 1,
         "customer_name": customer_name,
-        "quote": quote
+        "cart_type": cart_type,
+        "selected_parts": selected_parts,
+        "quote": quote,
+        "timestamp": datetime.now().isoformat()
     }
+
+    quotes = load_quotes()
+    quotes.append(quote_data)
+    save_quotes(quotes)
+
+    CURRENT_QUOTE = quote_data
 
     return render_template(
         "quote.html",
@@ -96,7 +120,13 @@ def export_excel():
     return send_file(file, as_attachment=True)
 
 
+@app.route("/quotes")
+def quotes_list():
+    quotes = load_quotes()
+    return render_template("quotes.html", quotes=quotes)
 
+
+    
 
 # ---- START SERVER (MUST BE LAST) ----
 if __name__ == "__main__":

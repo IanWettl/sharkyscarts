@@ -1,0 +1,84 @@
+[
+  {
+    "id": 1,
+    "customer_name": "Ian",
+    "cart_type": "6",
+    "selected_parts": [
+      "leds"
+    ],
+    "quote": {
+      "base": 9000,
+      "parts_total": 300,
+      "labor_cost": 100,
+      "total": 9400,
+      "breakdown": [
+        {
+          "item": "leds",
+          "price": 300
+        }
+      ]
+    },
+    "timestamp": "2026-05-19T20:35:11.092934"
+  },
+  {
+    "id": 2,
+    "customer_name": "John wick",
+    "cart_type": "2",
+    "selected_parts": [],
+    "quote": {
+      "base": 4500,
+      "parts_total": 0,
+      "labor_cost": 0,
+      "total": 4500,
+      "breakdown": []
+    },
+    "timestamp": "2026-05-19T20:35:23.070803"
+  },
+  {
+    "id": 3,
+    "customer_name": "Randy",
+    "cart_type": "4",
+    "selected_parts": [
+      "lift_kit"
+    ],
+    "quote": {
+      "base": 6500,
+      "parts_total": 800,
+      "labor_cost": 200,
+      "total": 7500,
+      "breakdown": [
+        {
+          "item": "lift_kit",
+          "price": 800
+        }
+      ]
+    },
+    "timestamp": "2026-05-19T23:44:47.383656"
+  },
+  {
+    "id": 4,
+    "customer_name": "Todd'",
+    "cart_type": "2",
+    "selected_parts": [
+      "lift_kit",
+      "leds"
+    ],
+    "quote": {
+      "base": 4500,
+      "parts_total": 1100,
+      "labor_cost": 300,
+      "total": 5900,
+      "breakdown": [
+        {
+          "item": "lift_kit",
+          "price": 800
+        },
+        {
+          "item": "leds",
+          "price": 300
+        }
+      ]
+    },
+    "timestamp": "2026-05-21T01:04:18.481926"
+  }
+]
