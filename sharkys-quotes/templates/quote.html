@@ -1,12 +1,97 @@
-<h1>Sharky's Quote</h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sharky's Quote</title>
 
-<h3>{{ customer_name }}</h3>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
 
-<p>Base: ${{ quote.base }}</p>
-<p>Parts: ${{ quote.parts_total }}</p>
-<p>Labor: ${{ quote.labor_cost }}</p>
+        h1 {
+            margin-bottom: 5px;
+        }
 
-<h2>Total: ${{ quote.total }}</h2>
+        .customer {
+            margin-bottom: 25px;
+        }
 
-<a href="/export/pdf">Download PDF</a> |
-<a href="/export/excel">Download Excel</a>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th, td {
+            border: 1px solid #999;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .total-row td {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .download-links {
+            margin-top: 25px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Sharky's Quote</h1>
+
+    <div class="customer">
+        <strong>Customer:</strong> {{ customer_name }}
+    </div>
+
+    <table>
+        <tr>
+            <th>Description</th>
+            <th>Price</th>
+        </tr>
+
+        <tr>
+            <td>Base Cart</td>
+            <td>${{ quote.base }}</td>
+        </tr>
+
+        {% for part in selected_parts %}
+        <tr>
+            <td>{{ part.replace("_", " ").title() }}</td>
+            <td>Included</td>
+        </tr>
+        {% endfor %}
+
+        <tr>
+            <td>Parts Total</td>
+            <td>${{ quote.parts_total }}</td>
+        </tr>
+
+        <tr>
+            <td>Labor</td>
+            <td>${{ quote.labor_cost }}</td>
+        </tr>
+
+        <tr class="total-row">
+            <td>Total</td>
+            <td>${{ quote.total }}</td>
+        </tr>
+    </table>
+
+    {% if not pdf_mode %}
+    <div class="download-links">
+        <a href="/export/pdf">Download PDF</a> |
+        <a href="/export/excel">Download Excel</a>
+    </div>
+    {% endif %}
+
+</body>
+</html>

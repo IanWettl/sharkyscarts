@@ -5,9 +5,15 @@ CART_BASE = {
 }
 
 PARTS = {
-    "lift_kit": {"price": 800, "hours": 2},
-    "wheels": {"price": 600, "hours": 1},
-    "leds": {"price": 300, "hours": 1}
+    "lift_kit": {"price": 800, "hours": 4},
+    "wheels": {"price": 600, "hours": 2},
+    "leds": {"price": 150, "hours": 1},
+    "lithium": {"price": 950, "hours": 4},
+    "seatbelts": {"price": 80, "hours": 0.5},
+    "retractable_backseat": {"price": 150, "hours": 1},
+    "stereo": {"price": 500, "hours": 3},
+    "soundbar": {"price": 450, "hours": 2}
+
 }
 
 LABOR_RATE = 100

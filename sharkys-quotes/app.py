@@ -8,14 +8,13 @@ import os
 import json
 from datetime import datetime
 
-
-
+from flask import session
 
 
 app = Flask(__name__)
 
-#Global variable to store current quote in memory.
-CURRENT_QUOTE = {}
+app.secret_key = "hannah549!$"
+
 
 #helper functions for loading and saving quotes
 def load_quotes():
@@ -65,26 +64,33 @@ def quote():
     quotes.append(quote_data)
     save_quotes(quotes)
 
-    CURRENT_QUOTE = quote_data
-
+    session["current_quote"] = {
+        "customer_name": customer_name,
+        "quote": quote,
+        "selected_parts": selected_parts
+    }
     return render_template(
         "quote.html",
         customer_name=customer_name,
-        quote=quote
+        quote=quote,
+        selected_parts=selected_parts,
+        pdf_mode=False
     )
 
 @app.route("/export/pdf")
 def export_pdf():
 
-    global CURRENT_QUOTE
+    current_quote = session.get("current_quote")
 
-    if not CURRENT_QUOTE:
+    if not current_quote:
         return "No quote found. Create a quote first."
 
     html = render_template(
         "quote.html",
-        customer_name=CURRENT_QUOTE["customer_name"],
-        quote=CURRENT_QUOTE["quote"]
+        customer_name=current_quote["customer_name"],
+        quote=current_quote["quote"],
+        selected_parts=current_quote.get("selected_parts", []),
+        pdf_mode=True
     )
 
     pdf_file = "quote.pdf"
@@ -95,12 +101,12 @@ def export_pdf():
 @app.route("/export/excel")
 def export_excel():
 
-    global CURRENT_QUOTE
+    current_quote = session.get("current_quote")
 
-    if not CURRENT_QUOTE:
+    if not current_quote:
         return "No quote found. Create a quote first."
 
-    q = CURRENT_QUOTE["quote"]
+    q = current_quote["quote"]
 
     data = {
         "Item": ["Base", "Parts", "Labor", "Total"],

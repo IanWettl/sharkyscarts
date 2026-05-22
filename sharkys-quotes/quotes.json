@@ -80,5 +80,197 @@
       ]
     },
     "timestamp": "2026-05-21T01:04:18.481926"
+  },
+  {
+    "id": 5,
+    "customer_name": "ian",
+    "cart_type": "4",
+    "selected_parts": [
+      "lift_kit",
+      "leds"
+    ],
+    "quote": {
+      "base": 6500,
+      "parts_total": 950,
+      "labor_cost": 500,
+      "total": 7950,
+      "breakdown": [
+        {
+          "item": "lift_kit",
+          "price": 800
+        },
+        {
+          "item": "leds",
+          "price": 150
+        }
+      ]
+    },
+    "timestamp": "2026-05-22T17:01:56.420113"
+  },
+  {
+    "id": 6,
+    "customer_name": "ian",
+    "cart_type": "4",
+    "selected_parts": [
+      "lift_kit",
+      "leds"
+    ],
+    "quote": {
+      "base": 6500,
+      "parts_total": 950,
+      "labor_cost": 500,
+      "total": 7950,
+      "breakdown": [
+        {
+          "item": "lift_kit",
+          "price": 800
+        },
+        {
+          "item": "leds",
+          "price": 150
+        }
+      ]
+    },
+    "timestamp": "2026-05-22T17:15:00.673541"
+  },
+  {
+    "id": 7,
+    "customer_name": "ian",
+    "cart_type": "4",
+    "selected_parts": [
+      "lift_kit",
+      "leds"
+    ],
+    "quote": {
+      "base": 6500,
+      "parts_total": 950,
+      "labor_cost": 500,
+      "total": 7950,
+      "breakdown": [
+        {
+          "item": "lift_kit",
+          "price": 800
+        },
+        {
+          "item": "leds",
+          "price": 150
+        }
+      ]
+    },
+    "timestamp": "2026-05-22T17:15:36.041360"
+  },
+  {
+    "id": 8,
+    "customer_name": "Keerstin",
+    "cart_type": "4",
+    "selected_parts": [
+      "lift_kit",
+      "leds"
+    ],
+    "quote": {
+      "base": 6500,
+      "parts_total": 950,
+      "labor_cost": 500,
+      "total": 7950,
+      "breakdown": [
+        {
+          "item": "lift_kit",
+          "price": 800
+        },
+        {
+          "item": "leds",
+          "price": 150
+        }
+      ]
+    },
+    "timestamp": "2026-05-22T17:25:47.573209"
+  },
+  {
+    "id": 9,
+    "customer_name": "Maya",
+    "cart_type": "2",
+    "selected_parts": [
+      "lift_kit",
+      "wheels",
+      "leds"
+    ],
+    "quote": {
+      "base": 4500,
+      "parts_total": 1550,
+      "labor_cost": 700,
+      "total": 6750,
+      "breakdown": [
+        {
+          "item": "lift_kit",
+          "price": 800
+        },
+        {
+          "item": "wheels",
+          "price": 600
+        },
+        {
+          "item": "leds",
+          "price": 150
+        }
+      ]
+    },
+    "timestamp": "2026-05-22T17:28:27.848234"
+  },
+  {
+    "id": 10,
+    "customer_name": "Udon",
+    "cart_type": "2",
+    "selected_parts": [
+      "lift_kit",
+      "leds"
+    ],
+    "quote": {
+      "base": 4500,
+      "parts_total": 950,
+      "labor_cost": 500,
+      "total": 5950,
+      "breakdown": [
+        {
+          "item": "lift_kit",
+          "price": 800
+        },
+        {
+          "item": "leds",
+          "price": 150
+        }
+      ]
+    },
+    "timestamp": "2026-05-22T17:32:42.418173"
+  },
+  {
+    "id": 11,
+    "customer_name": "Ian Wettlaufer",
+    "cart_type": "2",
+    "selected_parts": [
+      "lift_kit",
+      "wheels",
+      "leds"
+    ],
+    "quote": {
+      "base": 4500,
+      "parts_total": 1550,
+      "labor_cost": 700,
+      "total": 6750,
+      "breakdown": [
+        {
+          "item": "lift_kit",
+          "price": 800
+        },
+        {
+          "item": "wheels",
+          "price": 600
+        },
+        {
+          "item": "leds",
+          "price": 150
+        }
+      ]
+    },
+    "timestamp": "2026-05-22T22:08:40.942906"
   }
 ]
