@@ -306,6 +306,7 @@ ul { list-style: none; }
   justify-content: center;
 }
 
+
 /* Replace these with real photo backgrounds when ready */
 .product-img--blue  { background: var(--blue-light); color: var(--blue); }
 .product-img--teal  { background: var(--teal-light); color: var(--teal); }
